@@ -91,17 +91,17 @@ namespace Wolink
             Wio sensor2 = new Wio();
             var data1 = sensor1.Get1();
             var data2 = sensor2.Get1();
-            sensor1.POST1();
+            
             while (true)
             {
                 if (data1 != null)
                 {
-                    var result1 = sensor1.POST(data1);
+                    var result1 = sensor1.POST1(data1);
                     Console.WriteLine(result1);
                 }
                 if (data2 != null)
                 {
-                    var result2 = p2.SetScreenLine2(data2);
+                    var result2 = sensor2.POST1(data2);
                     Console.WriteLine(result2);
                 }
                 System.Threading.Thread.Sleep(2000);
